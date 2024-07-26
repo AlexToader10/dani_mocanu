@@ -1,0 +1,12 @@
+{
+	"TARGET_IP":"146.122.164.199",
+	"PROGRAM":"hello.bin",
+	"ARCH":"aarch64-poky-linux-musl",
+	"OECORE_NATIVE_SYSROOT":"/home/alex/sdk/sysroots/x86_64-pokysdk-linux",
+	"SDKTARGETSYSROOT": "/home/alex/sdk/sysroots/aarch64-poky-linux-musl",
+	"CC_PREFIX": "${OECORE_NATIVE_SYSROOT}/usr/bin/${ARCH}/${ARCH}-",
+	"CXX": "${config:CC_PREFIX}g++ --sysroot=${config:SDKTARGETSYSROOT}",
+	"CC": "${config:CC_PREFIX}gcc --sysroot=${config:SDKTARGETSYSROOT}",
+	"BIN": "hello.bin",
+	"SRC": "main.c"
+}

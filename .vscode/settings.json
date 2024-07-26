@@ -1,0 +1,31 @@
+{
+	"VARISCITE": {
+		/* Target Device Settings */
+		"TARGET_IP":"192.168.0.141",
+
+		/* Project Settings */
+		"PROGRAM":"hello.bin",
+
+		/* Yocto SDK Configuration */
+		"ARCH":"aarch64-poky-linux-musl",
+        "OECORE_NATIVE_SYSROOT":"/home/alex/Desktop/sdk2/sysroots/x86_64-pokysdk-linux",
+        "SDKTARGETSYSROOT": "/home/alex/Desktop/sdk2/sysroots/aarch64-poky-linux-musl",
+
+		/* Yocto SDK Constants */
+        "CC_PREFIX": "${config:VARISCITE.OECORE_NATIVE_SYSROOT}/usr/bin/${config:VARISCITE.ARCH}/${config:VARISCITE.ARCH}-",
+		"CXX": "${config:VARISCITE.CC_PREFIX}g++ --sysroot=${config:VARISCITE.SDKTARGETSYSROOT}",
+		"CC": "${config:VARISCITE.CC_PREFIX}gcc --sysroot=${config:VARISCITE.SDKTARGETSYSROOT}",
+	},
+	"files.associations": {
+		"*.conf": "bitbake",
+		"*.inc": "bitbake"
+	},
+	"python.autoComplete.extraPaths": [
+		"${workspaceFolder}/sources/poky/bitbake/lib",
+		"${workspaceFolder}/sources/poky/meta/lib"
+	],
+	"python.analysis.extraPaths": [
+		"${workspaceFolder}/sources/poky/bitbake/lib",
+		"${workspaceFolder}/sources/poky/meta/lib"
+	]
+}
